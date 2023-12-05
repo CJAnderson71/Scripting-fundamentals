@@ -1,0 +1,9 @@
+import sys
+x=60
+y=3
+knots=52.13854950555276
+feet=316800
+seconds=10800
+print("The speed in knots is"), print(knots/y)
+print("The speed in miles per hour is"), print(x/y)
+print("The speed in feet per second is"),print(feet/seconds)
