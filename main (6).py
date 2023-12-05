@@ -1,22 +1,29 @@
-# On the first line, create the following array
+# Iterate over numbers from 10 to 100 (inclusive)
+for num in range(10, 101):
+    # Check if the number is equal to zero
+    if num == 0:
+        # Skip the current iteration and move to the next number
+        continue
 
-numbers = [34, 9, 32, 91, 58, 13, 77, 21, 56]
+    # Check if the number is not divisible by 5
+    elif num % 5 != 0:
+        # Skip the current iteration and move to the next number
+        continue
 
-# Next, print the array numbers
+    # Check if the number is not of integer type
+    elif not isinstance(num, int):
+        # Skip the current iteration and move to the next number
+        continue
 
-print(numbers)
+    # Check if the number is equal to 95
+    elif num == 95:
+        # Break out of the loop prematurely
+        break
 
-# fetch the user input count for the number of elements to fetch from the array.
+    # If none of the above conditions are met, the number has passed all checks
+    else:
+        pass
+        # No specific action needed, use the 'pass' statement
 
-n = int(input("How many elements to fetch: "))
-
-# and then outputs those elements.
-
-for i in range(n):
-    print(numbers[i], end=' ')
-
-print()
-
-# Finally, print out the slice of the array from the first element to the nth element.
-
-print(numbers[:n])
+    # Print the number if it meets the conditions specified
+    print(num)
