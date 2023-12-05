@@ -1,17 +1,21 @@
-# reading days from user
-days = int(input("Enter number of days: "))
+#define name
+name = input("Enter your name: ")
 
-# print number of years
-print("Years:", int(days // 365))
+#define password
+password = "Pas$Word"
 
-# updating days
-days = days % 365
+#define boolean variable
+first = True
 
-# printing number of weeks
-print("Weeks:", int(days // 7))
-
-# updating days
-days = days % 7
-
-# printing number of days
-print("Days:", int(days))
+#while loop
+while first:
+    
+    #ask the password
+    pwd = input("Enter your password: ")
+    
+    #check if input password is correct or not
+    if pwd != password:
+        print("Incorrect password, try again...")
+    else:
+        print("Welcome back,",name)
+        break
