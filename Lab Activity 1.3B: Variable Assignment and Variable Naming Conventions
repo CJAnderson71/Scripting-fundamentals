@@ -1,0 +1,7 @@
+import sys
+PI=3.14159
+R=3
+print("Diameter of the circle:")
+print(2*R)
+print("Area of the circle") 
+print(PI*R**2)
