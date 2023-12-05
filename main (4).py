@@ -1,28 +1,12 @@
-# reading sentence from user
-sentence = input("Sentence: ")
+# Step 1: Define a counter for the sum named total_sum
+total_sum = 0
 
-# reading word from user
-word = input("Word to look for in sentence: ")
+# Step 2: Define a for loop with an even range for numbers between 5 and 55.
+# We can use the range function with a step of 2 to generate even numbers.
+for num in range(6, 56, 2):  # Starting from 6 (the first even number) up to 56 (exclusive) with a step of 2.
+    
+    # Step 3: Add each looped number to the sum.
+    total_sum += num
 
-# replacing spaces from sentence
-sentence = sentence.replace(" ","")
-
-# converting sentence to lower case
-sentence = sentence.lower()
-
-# converting word to lower case
-word = word.lower()
-
-count = 0
-
-# looping through each index of sentence
-for i in range(len(sentence)):
-
-    # checking word starts from index i
-    if sentence[i:].startswith(word):
-
-        # incrementing the value of count by 1
-        count += 1
-
-# printing the output
-print("There are",count,"occurrences of '"+word+"' in the sentence")
+# Step 4: Outside the loop, print out the total sum.
+print(total_sum)
