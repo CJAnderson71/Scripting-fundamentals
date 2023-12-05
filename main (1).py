@@ -1,15 +1,45 @@
-"""
-Program to multiply the user input whole number by multiple's of 2 and print it
-"""
+def validate_url(url):
+    """
+    Validate a URL based on supported protocols and file extensions.
 
-whole_num = int(input("Generate a multiplication table for: "))  # takes user input
+    Args:
+        url (str): Input URL to be validated.
 
-print("_" * 10)  # prints 10 underscores at top border
+    Returns:
+        bool: True if the URL is valid, False otherwise.
+    """
 
-print("Number:", whole_num)  # print Number
+    # Supported protocols
+    valid_protocols = ['http', 'https', 'ftp']
 
-# for loop iterates from 2 to 10 with step of 2(step of 2 signifies multiples of 2)
-for x in range(2, 11, 2):
-    print(x, ": ", (x * whole_num), sep="")  # multiplies x by whole number and prints it
+    # Supported file extensions
+    valid_fileinfo = ['txt', 'csv', 'docx']
 
-print("_" * 10)  # prints 10 underscore at bottom
+    # Split the input URL into parts
+    parts = url.split('://')
+    
+    # Check if the URL has the correct number of parts
+    if len(parts) != 2:
+        return False  # Invalid URL format
+    
+    # Extract protocol and fileinfo
+    protocol, rest = parts
+    fileinfo = rest.split('/')[-1].split('.')[-1]
+
+    # Check if the protocol is valid
+    if protocol not in valid_protocols:
+        return False  # Invalid protocol
+    
+    # Check if the file extension is valid
+    if fileinfo not in valid_fileinfo:
+        return False  # Invalid file extension
+    
+    # If both checks pass, the URL is valid
+    return True
+
+# Example usage:
+url_to_validate = "https://example.com/data.csv"
+if validate_url(url_to_validate):
+    print(f"The URL '{url_to_validate}' is valid.")
+else:
+    print(f"The URL '{url_to_validate}' is not valid.")
